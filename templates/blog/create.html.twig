@@ -4,28 +4,42 @@
 
 {% block body %}
 
-<h1>
+<div class="container">
+<h1 class="text-center my-3">
     {% if editMode %}
         Modifier un article
     {% else %}
         Créer un article
     {% endif %}
 </h1>
-{{ form_start(formArticle) }}
+<div class="col-12 d-flex justify-content-center">
+{{ form_start(formArticle,{'attr': {'class':"form"}}) }}
 
+<div class="mb-3">
 {{ form_row(formArticle.title,{'attr': {'placeholder':"Titre de l'article"}}) }}
-{{ form_row(formArticle.category) }}
-{{ form_row(formArticle.content,{'attr':{'placeholder':"Contenu de l'article"}}) }}
-{{ form_row(formArticle.image,{'attr':{'placeholder':"URL de l'image"}}) }}
 
-<button type="submit" class="btn btn-success">
+</div>
+<div class="mb-3">
+{{ form_row(formArticle.category,{'attr': {'class':"form-select"}}) }} <br>
+</div>
+<div class="mb-3">
+{{ form_row(formArticle.content,{'attr':{'placeholder':"Contenu de l'article"}}) }}
+</div>
+<div class="mb-3">
+{{ form_row(formArticle.image,{'attr':{'placeholder':"URL de l'image"}}) }}
+</div>
+<div class="d-grid gap-2">
+<button type="submit" class="btn btn-success text-center">
     {% if editMode %}
         Enregistrer les modifications
     {% else %}
         Ajouter l'article
     {% endif %}
 </button>
+</div>
 {{ form_end(formArticle) }}
+</div>
+</div>
 
 
 {% endblock %}

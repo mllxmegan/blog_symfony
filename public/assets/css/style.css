@@ -1,51 +1,95 @@
-.nav-link
-{
-    color:#E9C46A !important;
+
+@font-face {
+  font-family: "squada";
+  src: url("../font/SquadaOne-Regular.ttf"),
+}
+
+h1 {
+  font-family: 'squada';
 }
 
 * {
     margin: 0;
     padding: 0;
   }
-  
-  body {
-    font-family: "Open Sans";
-    overflow-x: hidden;
-  }
-  
-  .showcase {
+
+  .nav-link
+{
+    color:#E9C46A !important;
+    font-weight: bold;
+    margin-right: 20px;
+}
+  /* HERO SECTION HOME */
+.container 
+{
+  width: 100%;
+  margin: auto;
+  padding: 0;
+  max-width: 100%;
+}
+  .container_home {
     width: 100%;
-    height: 500px;
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.hero {
     position: relative;
-    color: white;
-    text-align: center;
-  }
-  
-  .showcase img {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.3)
+    );
+}
+
+
+.hero__container {
+    padding: 10rem;
+}
+
+.hero__image {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index:99
+    object-fit: cover;
+
+}
+
+.hero__title {
+    margin: 0;
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+
+}
+
+/* ARTICLES */
+  .card img
+  {
+      padding-top: 10px;
+      width: 100%;
+      transition: 0.3s;
+      border-radius: 8px;
   }
-  /* BG HOME */
-  .showcase .overlay {
-    width: 100%;
-    height: 500px;
-    background-color: rgba(0, 35, 82, 0.7);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index:999
+  .card {
+    border-radius: 12px;
+    margin-bottom: 6%;
+    background: #fff;
+    box-shadow: 10px 10px 24px -12px rgba(0, 0, 0, 75);
+    transition: 0.3s;
   }
-  
-  .showcase h2 {
-    margin-top: 170px;
-    font-size: 3em;
+
+  .card:hover{
+      box-shadow: inset 10px 10px 24px -12px rgba(0, 0, 0, 75);
   }
-  
-  .showcase p {
-    margin-top: 8px;
-    font-size: 1.2em;
-  }
+
+/* FORMULAIRE */

@@ -6,7 +6,7 @@
     <h2>{{ article.title }}</h2>
     <div class="metadata">Ecrit le {{article.createdAt | date('d/m/Y')}} à {{article.createdAt | date('H:i')}} dans la catégorie {{article.category.title}}</div>
     <div class="content">
-        <img src="{{article.image}}" alt=""> <br>
+        <img src="{{article.image}}" class="rounded my-4"alt=""> <br>
        {{article.content | raw }}
     </div>
 </article>
@@ -14,17 +14,13 @@
 <section id="commentaires">
     <h1>{{article.comments | length }} commentaires</h1>
     {%for comment in article.comments %}
-        <div class="comment">
-            <div class="row">
-                <div class="col-3">
-                    {{comment.author}} (<small>{{comment.createdAt | date('d/m/Y à H:i')}}</small>)
-                </div>
-                <div class="col">
-                    {{comment.content | raw}}
-                </div>
-            </div>
-        
-        </div>
+        <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"> {{comment.author}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{comment.createdAt | date('d/m/Y à H:i')}}</h6>
+      <p class="card-text">{{comment.content | raw}}</p>
+    </div>
+  </div>
     {% endfor %}
 
     {% if app.user %}

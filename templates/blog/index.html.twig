@@ -5,18 +5,22 @@
 {% block body %}
 
 <section class="articles">
+    <div class="container container_home">
+        <div class="row" data-masonry='{"percentPosition": true }'>
+        
+            
+            {% for article in articles %}
 
-{% for article in articles %}
-    <article>
-        <h2>{{article.title}}</h2>
-        <div class="metadata">Ecrit le {{article.createdAt | date('d/m/Y')}} à {{article.createdAt | date('H:i') }} dans la catégorie {{article.category.title}}</div>
-        <div class="content">
-        <img src="{{ article.image }}" alt=""> <br>
-          {{ article.content | raw }}
-            <a href="{{ path('blog_show', {'id': article.id}) }}" class="btn btn-primary">Lire la suite</a>
+                <div class="card mx-3 my-2" style="width: 20rem;">
+                <div class="card-image">
+                    <a href="{{ path('blog_show', {'id': article.id}) }}"> <img src="{{ article.image }}" alt=""> </a>
+                </div>
+                    <div class="card-body">
+                    <h5 class="card-title">{{article.title}} </h5>
+                </div>
+             </div>
+            {% endfor %}
         </div>
-    </article>
-{% endfor %}
-
+    </div>
 </section>
 {% endblock %}

@@ -5,13 +5,13 @@
 {% block body %}
 
 <section class="articles">
-    <div class="container container_home">
-        <div class="row" data-masonry='{"percentPosition": true }'>
+    <div class="container">
+        <div class="row d-flex mt-4 " data-masonry='{"percentPosition": true }'>
         
             
             {% for article in articles %}
 
-                <div class="card mx-3 my-2" style="width: 20rem;">
+                <div class="col card mx-3 my-3 " style="width: 18rem;">
                 <div class="card-image">
                     <a href="{{ path('blog_show', {'id': article.id}) }}"> <img src="{{ article.image }}" alt=""> </a>
                 </div>

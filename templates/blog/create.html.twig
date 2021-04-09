@@ -16,17 +16,17 @@
 {{ form_start(formArticle,{'attr': {'class':"form"}}) }}
 
 <div class="mb-3">
-{{ form_row(formArticle.title,{'attr': {'placeholder':"Titre de l'article"}}) }}
+{{ form_row(formArticle.title,{'attr': {'placeholder':"Titre de l'article"},'label':"Titre de l'article :"}) }}
 
 </div>
 <div class="mb-3">
-{{ form_row(formArticle.category,{'attr': {'class':"form-select"}}) }} <br>
+{{ form_row(formArticle.category,{'attr': {'class':"form-select"},'label':"Catégorie :"}) }} <br>
 </div>
 <div class="mb-3">
-{{ form_row(formArticle.content,{'attr':{'placeholder':"Contenu de l'article"}}) }}
+{{ form_row(formArticle.content,{'attr':{'placeholder':"Contenu de l'article"},'label':"Contenu de l'article :"}) }}
 </div>
 <div class="mb-3">
-{{ form_row(formArticle.image,{'attr':{'placeholder':"URL de l'image"}}) }}
+{{ form_row(formArticle.image,{'attr':{'placeholder':"URL de l'image"},'label':"URL de l'image :"}) }}
 </div>
 <div class="d-grid gap-2">
 <button type="submit" class="btn btn-success text-center">

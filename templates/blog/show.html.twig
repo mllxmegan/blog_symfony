@@ -1,20 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
+<div class="container">
 <article>
-    <h2>{{ article.title }}</h2>
-    <div class="metadata">Ecrit le {{article.createdAt | date('d/m/Y')}} à {{article.createdAt | date('H:i')}} dans la catégorie {{article.category.title}}</div>
-    <div class="content">
-        <img src="{{article.image}}" class="rounded my-4"alt=""> <br>
-       {{article.content | raw }}
+  <div class="row">
+  <div class="col-12 d-flex flex-column">
+      <h1 class="text-center mt-4">{{ article.title }}</h1>
+      <div class="metadata text-center">Ecrit le {{article.createdAt | date('d/m/Y')}} à {{article.createdAt | date('H:i')}} dans la catégorie {{article.category.title}}
+      </div>
+      <div class="content col-6 d-flex flex-column mx-auto">
+          <img src="{{article.image}}" class="rounded my-4 justify-content-center w-auto"alt=""> <br>
+        {{article.content | raw }}
+      </div>
     </div>
+  </div>
 </article>
 
 <section id="commentaires">
-    <h1>{{article.comments | length }} commentaires</h1>
+    <h2 class="ms-4 my-3">{{article.comments | length }} commentaires</h2>
     {%for comment in article.comments %}
-        <div class="card">
+        <div class="card ms-4 mb-3" style="max-width: 70rem;">
     <div class="card-body">
       <h5 class="card-title"> {{comment.author}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">{{comment.createdAt | date('d/m/Y à H:i')}}</h6>
@@ -32,8 +37,11 @@
     {{ form_end(commentForm) }}
 
     {% else %}
-    <h2>Vous ne pouvez pas commenter si vous n'êtes pas connecté ! </h2>
-    <a href="{{path('security_login')}}" class="btn btn-primary">Connexion</a>
+    <div class="col-12 d-flex flex-column">
+    <h2 class="text-center">Vous ne pouvez pas commenter si vous n'êtes pas connecté ! </h2>
+    <a href="{{path('security_login')}}" class="btn btn-primary justify-content-center d-md-block ">Connexion</a>
+    </div>
     {% endif %}
 </section>
+</div>
 {% endblock %}

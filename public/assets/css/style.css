@@ -3,15 +3,18 @@
   font-family: "squada";
   src: url("../font/SquadaOne-Regular.ttf"),
 }
+* {
+  margin: 0;
+  padding: 0;
+}
 
 h1 {
   font-family: 'squada';
 }
 
-* {
-    margin: 0;
-    padding: 0;
-  }
+p {
+  font-size: 1rem;
+}
 
   .nav-link
 {
